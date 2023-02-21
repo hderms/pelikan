@@ -15,6 +15,7 @@ debug = ["seg/debug"]
 [dependencies]
 common = { path = "../common" }
 config = { path = "../config" }
+mixed-ds = { path = "../storage/mixed_ds" }
 protocol-common = { path = "../protocol/common" }
 protocol-memcache = { path = "../protocol/memcache" }
 protocol-ping = { path = "../protocol/ping" }

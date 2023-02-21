@@ -28,10 +28,12 @@ members = [
     "src/proxy/thrift",
     "src/server/pingserver",
     "src/server/rds",
+    "src/server/rds-mixed-ds",
     "src/server/segcache",
     "src/session",
     "src/storage/bloom",
     "src/storage/datapool",
+    "src/storage/mixed_ds",
     "src/storage/seg",
     "src/storage/types",
 ]

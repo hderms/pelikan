@@ -7,9 +7,11 @@
 //! addition to the base `EntryStore` trait. For example [`Seg`] implements both
 //! [`EntryStore`] and [`protocol::memcache::MemcacheStorage`].
 
+mod mixed_ds;
 mod noop;
 mod seg;
 
+pub use self::mixed_ds::*;
 pub use self::noop::*;
 pub use self::seg::*;
 
