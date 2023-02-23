@@ -12,4 +12,14 @@ license = { workspace = true }
 [dependencies]
 common = { path = "../../common" }
 min-max-heap = "1.3.0"
+rand_xoshiro = { workspace = true }
+rand = { workspace = true , features = ["small_rng", "getrandom"] }
 
+
+[dev-dependencies]
+criterion = "0.3.4"
+
+[[bench]]
+name = "benchmark"
+path = "benches/benchmark.rs"
+harness = false

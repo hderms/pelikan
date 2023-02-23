@@ -1458,7 +1458,10 @@ name = "mixed-ds"
 version = "0.3.1"
 dependencies = [
  "common",
+ "criterion 0.3.6",
  "min-max-heap",
+ "rand",
+ "rand_xoshiro",
 ]
 
 [[package]]

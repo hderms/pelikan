@@ -18,12 +18,13 @@ impl Index {
         }
     }
 
-    pub fn set(&mut self, key: String, value: StrValue) {
+    pub fn set(&mut self, key: String, value: &StrValue) {
         let expiration = 0;
+        let s = value.clone();
         self.map.insert(
             key,
             Entry {
-                value: Value::String { backing: value },
+                value: Value::String { backing: s },
                 expiration,
             },
         );
@@ -34,17 +35,11 @@ struct Entry {
     expiration: u64,
 }
 pub enum Value {
-    Map {
-        backing: HashMap<String, StrValue>,
-    },
-    List {
-        backing: VecDeque<StrValue>,
-    },
-    String {
-        backing: StrValue,
-    },
+    Map { backing: HashMap<String, StrValue> },
+    List { backing: VecDeque<StrValue> },
+    String { backing: StrValue },
 }
-#[derive(Eq, PartialEq)]
+#[derive(Clone, Eq, PartialEq)]
 pub enum StrValue {
     Numeric(i64),
     StringValue(String),
@@ -55,7 +50,7 @@ pub enum StrValue {
 //     score: i64,
 //     element: StrValue<'a>,
 // }
-// 
+//
 // impl PartialOrd for HeapElement {
 //     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
 //         self.score.partial_cmp(&other.score)
